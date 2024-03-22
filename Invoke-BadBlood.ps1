@@ -87,7 +87,6 @@ if ($badblood -eq 'badblood') {
    # LAPS STUFF
    if ($PSBoundParameters.ContainsKey('SkipLapsInstall') -eq $false)
       {
-         Write-Progress -Activity "Random Stuff into A domain" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
          .($basescriptPath + '\AD_LAPS_Install\InstallLAPSSchema.ps1')
          Write-Progress -Activity "Random Stuff into A domain: Install LAPS" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
       }
@@ -191,22 +190,19 @@ if ($badblood -eq 'badblood') {
 
    .($basescriptpath + '\AD_Attack_Vectors\ASREP_NotReqPreAuth.ps1')
    ADREP_NotReqPreAuth -UserList $ASREPUsers
-      <#
+      
    write-host "Adding Weak User Passwords for a few users" -ForegroundColor Green
    Write-Progress -Activity "Adding Weak User Passwords" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
-   # get .05 percent of the all users output and asrep them
-   $WeakCount = [Math]::Ceiling($AllUsers.count * .02)
+   $WeakCount = [Math]::Ceiling($AllUsers.count * .90)
    $WeakUsers = @()
-   $asrep = 1
+   $weakpass = 1
    do {
 
       $WeakUsers += get-random($AllUsers)
-      $asrep++}while($asrep -le $WeakCount)
+      $asrep++}while($weakpass -le $WeakCount)
 
    .($basescriptpath + '\AD_Attack_Vectors\WeakUserPasswords.ps1')
    WeakUserPasswords -UserList $WeakUsers
-    #>
-
 
 }
 # $Definition = Get-Content Function:\CreateUser -ErrorAction Stop

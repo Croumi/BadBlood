@@ -270,9 +270,9 @@
     
     $passwordinDesc = 1..1000|get-random
         
-        $pwd = New-SWRandomPassword -MinPasswordLength 22 -MaxPasswordLength 25
+        $pwd = New-SWRandomPassword -MinPasswordLength 7 -MaxPasswordLength 10
             if ($passwordinDesc -lt 10) { 
-                $description = 'Just so I dont forget my password is ' + $pwd 
+                $description = 'pwd ' + $pwd 
             }else{}
     if($name.length -gt 20){
         $name = $name.substring(0,20)

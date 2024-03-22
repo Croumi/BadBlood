@@ -12,5 +12,5 @@ Requirements:
 Running On Windows:
 ```
 Set-ExecutionPolicy bypass
-.\Invoke-BadBlood.ps1
+.\Invoke-BadBlood.ps1 -SkipLapsInstall
 ```
