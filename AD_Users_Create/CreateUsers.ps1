@@ -270,7 +270,7 @@
     
     $passwordinDesc = 1..1000|get-random
         
-    $pwd = New-SWRandomPassword -MinPasswordLength 7 -MaxPasswordLength 8
+    $pwd = New-SWRandomPassword -MinPasswordLength 7 -MaxPasswordLength 9
     if ($passwordinDesc -lt 10) { 
         $description = 'pwd ' + $pwd 
     }
