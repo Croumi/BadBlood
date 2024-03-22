@@ -191,9 +191,9 @@ if ($badblood -eq 'badblood') {
    .($basescriptpath + '\AD_Attack_Vectors\ASREP_NotReqPreAuth.ps1')
    ADREP_NotReqPreAuth -UserList $ASREPUsers
       
-   write-host "Adding Weak User Passwords for a few users" -ForegroundColor Green
+   write-host "Adding Weak User Passwords" -ForegroundColor Green
    Write-Progress -Activity "Adding Weak User Passwords" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
-   $WeakCount = [Math]::Ceiling($AllUsers.count * .90)
+   $WeakCount = [Math]::Ceiling($AllUsers.count * .01)
    $WeakUsers = @()
    $weakpass = 1
    do {
