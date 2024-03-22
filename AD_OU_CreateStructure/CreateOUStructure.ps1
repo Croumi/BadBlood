@@ -5,7 +5,7 @@ function Get-ScriptDirectory {
 }
 $scriptPath = Get-ScriptDirectory
 
-$TopLevelOUs = @('Admin', 'Tier 1','Tier 2','Stage', 'Quarantine', 'Grouper-Groups', 'People','Testing','.SecFrame.com')
+$TopLevelOUs = @('Admin', 'Tier 1','Tier 2','Stage', 'Quarantine', 'Grouper-Groups', 'People','Testing')
     
 $AdminSubOUs = @('Tier 0', 'Tier 1', 'Tier 2', 'Staging') 
     #loop before the ou name by making T#-OBJECT name as the OU
