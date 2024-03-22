@@ -42,9 +42,10 @@ function WeakUserPasswords {
     $BadPasswords = Get-Content $PasswordFile
     
     foreach($user in $UserList){
+        Write-Output "debug $user";
         $RandomPassword = Get-random $BadPasswords
         write-host $RandomPassword
-        $User | Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString $RandomPassword -AsPlainText -Force)
+        $user | Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString $RandomPassword -AsPlainText -Force)
     }
 	
     
