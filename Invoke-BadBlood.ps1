@@ -197,7 +197,7 @@ if ($badblood -eq 'badblood') {
    $WeakUsers = @()
    $weakpass = 1
    do {
-
+      write-host "debug";
       $WeakUsers += get-random($AllUsers)
       $asrep++}while($weakpass -le $WeakCount)
 
