@@ -10,7 +10,13 @@ Requirements:
 - Active Directory Powershell Installed
 
 Running On Windows:
-```
+```powershell
 Set-ExecutionPolicy bypass
 .\Invoke-BadBlood.ps1 -SkipLapsInstall
+```
+
+debug
+```powershell
+Set-ExecutionPolicy bypass
+.\Invoke-BadBlood.ps1 -SkipLapsInstall -UserCount10 -Groupcount 10 -ComputerCount 10
 ```
