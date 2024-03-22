@@ -38,7 +38,7 @@ function WeakUserPasswords {
             HelpMessage = 'Supply a user list from get-aduser to set weak password')]
             [Object[]]$UserList
     )
-    $PasswordFile = "$basescriptpath + '\AD_Attack_Vectors\small_rockyou.txt'"
+    $PasswordFile = "$PSCommandPath + '\AD_Attack_Vectors\small_rockyou.txt'"
     $BadPasswords = Get-Content $PasswordFile
     
     foreach($user in $UserList){
