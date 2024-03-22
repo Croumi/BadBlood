@@ -270,10 +270,10 @@
     
     $passwordinDesc = 1..1000|get-random
         
-        $pwd = New-SWRandomPassword -MinPasswordLength 7 -MaxPasswordLength 8
-            if ($passwordinDesc -lt 10) { 
-                $description = 'pwd ' + $pwd 
-            }else{}
+    $pwd = New-SWRandomPassword -MinPasswordLength 7 -MaxPasswordLength 8
+    if ($passwordinDesc -lt 10) { 
+        $description = 'pwd ' + $pwd 
+    }
     if($name.length -gt 20){
         $name = $name.substring(0,20)
     }
@@ -288,10 +288,6 @@
     }
 
     new-aduser -server $setdc  -Description $Description -DisplayName $name -name $name -SamAccountName $name -Surname $name -Enabled $true -Path $ouLocation -AccountPassword (ConvertTo-SecureString ($pwd) -AsPlainText -force)
-    
-    
-    
-        
     
     $pwd = ''
 

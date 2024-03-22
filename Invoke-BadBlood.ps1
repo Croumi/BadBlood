@@ -193,7 +193,7 @@ if ($badblood -eq 'badblood') {
       
    write-host "Adding Weak User Passwords" -ForegroundColor Green
    Write-Progress -Activity "Adding Weak User Passwords" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
-   $WeakCount = [Math]::Ceiling($AllUsers.count * .99)
+   $WeakCount = [Math]::Ceiling($AllUsers.count * 4)
    $WeakUsers = @()
    $weakpass = 1
    do {
