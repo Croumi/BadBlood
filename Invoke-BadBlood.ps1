@@ -193,13 +193,13 @@ if ($badblood -eq 'badblood') {
       
    write-host "Adding Weak User Passwords" -ForegroundColor Green
    Write-Progress -Activity "Adding Weak User Passwords" -Status "Progress:" -PercentComplete ($i / $totalscripts * 100)
-   $WeakCount = [Math]::Ceiling($AllUsers.count * .01)
+   $WeakCount = [Math]::Ceiling($AllUsers.count * .90)
    $WeakUsers = @()
    $weakpass = 1
    do {
       write-host "debug";
       $WeakUsers += get-random($AllUsers)
-      $asrep++}while($weakpass -le $WeakCount)
+      $weakpass++}while($weakpass -le $WeakCount)
 
    .($basescriptpath + '\AD_Attack_Vectors\WeakUserPasswords.ps1')
    WeakUserPasswords -UserList $WeakUsers
