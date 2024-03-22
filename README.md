@@ -18,5 +18,5 @@ Set-ExecutionPolicy bypass
 debug
 ```powershell
 Set-ExecutionPolicy bypass
-.\Invoke-BadBlood.ps1 -SkipLapsInstall -UserCount10 -Groupcount 10 -ComputerCount 10
+.\Invoke-BadBlood.ps1 -SkipLapsInstall -UserCount 10 -Groupcount 10 -ComputerCount 10
 ```
