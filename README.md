@@ -14,9 +14,3 @@ Running On Windows:
 Set-ExecutionPolicy bypass
 .\Invoke-BadBlood.ps1 -SkipLapsInstall
 ```
-
-debug
-```powershell
-Set-ExecutionPolicy bypass
-.\Invoke-BadBlood.ps1 -SkipLapsInstall -UserCount 10 -Groupcount 10 -ComputerCount 10
-```
