@@ -38,12 +38,12 @@ function WeakUserPasswords {
             HelpMessage = 'Supply a user list from get-aduser to set weak password')]
             [Object[]]$UserList
     )
-    Write-Output "debug";
+    write-host "debug";
     $PasswordFile = "$basescriptpath + '\AD_Attack_Vectors\small_rockyou.txt'"
     $BadPasswords = Get-Content $PasswordFile
     
     foreach($user in $UserList){
-        Write-Output "debug $user";
+        write-host "debug $user";
         $RandomPassword = Get-random $BadPasswords
         write-host $RandomPassword
         $user | Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString $RandomPassword -AsPlainText -Force)
