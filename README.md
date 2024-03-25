@@ -14,3 +14,5 @@ Running On Windows:
 Set-ExecutionPolicy bypass
 .\Invoke-BadBlood.ps1 -SkipLapsInstall
 ```
+
+cat $wordlists/rockyou.txt| grep -P '.*[A-Z].*' | grep -P '.*[a-z].*' | grep -P '.*\d.*' | grep -P '\&|\=|\$|\%|\!|\:|\.|\\|\(|\)|\[|\]|\{|\}|\,|\_|-|\/|\"|\#|\€|\;|\£|\?|\<|\>|\§|\~|\µ' | grep -P '.{7,20}' | shuf -n 800000 > AD_Attack_Vectors/small_rockyou.txt && wc -l AD_Attack_Vectors/small_rockyou.txt
