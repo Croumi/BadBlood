@@ -287,7 +287,8 @@
         return $true
     }
 
-    new-aduser -server $setdc  -Description $Description -DisplayName $name -name $name -SamAccountName $name -Surname $name -Enabled $true -Path $ouLocation -AccountPassword (ConvertTo-SecureString ($pwd) -AsPlainText -force)
+    $Enabled = if ((Get-Random -Minimum 1 -Maximum 101) -le 35) { $true } else { $false }
+    new-aduser -server $setdc  -Description $Description -DisplayName $name -name $name -SamAccountName $name -Surname $name -Enabled $Enabled -Path $ouLocation -AccountPassword (ConvertTo-SecureString ($pwd) -AsPlainText -force)
     
     $pwd = ''
 
