@@ -243,7 +243,7 @@
     
     
     $accountType = 1..100|get-random 
-    if($accountType -le 3){ # X percent chance of being a service account
+    if($accountType -le 0){ # X percent chance of being a service account
     #service
     $nameSuffix = "SA"
     #removing do while loop and making random number range longer, sorry if the account is there already
